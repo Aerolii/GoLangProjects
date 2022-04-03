@@ -48,6 +48,16 @@ export GOPROXY=https://goproxy.cn # 代理
 go env -w GO111MODULE=on
 ```
 
+## Golang workspaces设置
+
+Go 版本 >= 1.18时，在设置了`GOPATH`路径的工作区文件夹内，如果使用`go mod init project_name`初始化时，vscode 会报错，提示`gopls`必须是根路径，因此需要使用以下命令初始化工作区：
+
+```shell
+cd $WORK # 工作区路径
+go work init
+go work use tools tools/gopls
+```
+
 ## [Golang language](./GoLangStudyNote/)
 
 Golang 基础语法学习笔记。
